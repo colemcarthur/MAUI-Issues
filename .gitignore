@@ -1,0 +1,48 @@
+# Build Folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# IDE Files
+.vscode/
+.idea/
+*.code-workspace
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Crash Logs
+*.log
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio
+.vs/
+.env
+
+# MAUI Specific
+platforms/
+Resources/Raw/*.db
+Resources/Raw/*.sqlite
+Resources/Raw/*.sqlite3
+Resources/Raw/*.bak
+
+# Configurations
+appsettings.json
+appsettings.*.json
+secrets.json
+
+# Local Build Settings
+launchSettings.json

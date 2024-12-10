@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TESTAPP.ShellPage1"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+    <VerticalStackLayout Padding="40" Spacing="10">
+
+        <Label
+            FontAttributes="Bold"
+            FontSize="30"
+            Text="Shell Page 1" />
+
+
+        <Button Clicked="Button_Clicked" Text="Go To Shell Page 2" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

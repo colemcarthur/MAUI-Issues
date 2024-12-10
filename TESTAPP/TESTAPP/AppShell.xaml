@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TESTAPP.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TESTAPP"
+    Title="TESTAPP"
+    FlyoutHeaderBehavior="Scroll"
+    FlyoutVerticalScrollMode="Auto"
+    Shell.FlyoutBehavior="Locked"
+    Shell.FlyoutWidth="300"
+    Shell.TabBarIsVisible="False">
+
+    <Shell.FlyoutHeader />
+
+    <ShellContent
+        Title="Shell Page 1"
+        ContentTemplate="{DataTemplate local:ShellPage1}"
+        FlyoutItemIsVisible="True"
+        Route="ShellPage1" />
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent
+            Title="Shell Page 2"
+            ContentTemplate="{DataTemplate local:ShellPage2}"
+            FlyoutItemIsVisible="True"
+            Route="ShellPage2" />
+
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter />
+
+</Shell>
