@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window
+    x:Class="SCQuote.AppWindows.MainWindow"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ApplicationQuitError.Controls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="SCQuote">
+    <Window.TitleBar>
+        <TitleBar
+            Title="Application Quit Error"
+            BackgroundColor="#44687D"
+            ForegroundColor="White"
+            IsVisible="True">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="TitleActiveStates">
+                        <VisualState x:Name="TitleBarTitleActive">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#44687D" />
+                                <Setter Property="ForegroundColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="TitleBarTitleInactive">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#DBE4EA" />
+                                <Setter Property="ForegroundColor" Value="#44687D" />
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Label
+                                            FontSize="11"
+                                            Text="(Inactive)"
+                                            TextColor="Gray"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                    </Setter.Value>
+                                </Setter>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </TitleBar>
+    </Window.TitleBar>
+</Window>

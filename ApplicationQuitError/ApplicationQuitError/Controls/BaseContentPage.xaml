@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ApplicationQuitError.Controls.BaseContentPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ApplicationQuitError.Controls"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    x:Name="this"
+    Title="BaseContentPage"
+    ios:Page.UseSafeArea="False"
+    x:DataType="controls:BaseContentPage"
+    Shell.NavBarIsVisible="False">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="{OnPlatform WinUI='False'}" IsVisible="{OnPlatform WinUI='False'}" />
+    </Shell.BackButtonBehavior>
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+            <Grid IgnoreSafeArea="True">
+                <Grid
+                    HorizontalOptions="{Binding PageHorizontalOptions, Source={x:Reference this}}"
+                    IgnoreSafeArea="True"
+                    WidthRequest="{OnPlatform {Binding PageWidth, Source={x:Reference this}},
+                                              WinUI='-1',
+                                              MacCatalyst='-1'}">
+
+                    <Grid
+                        BackgroundColor="Red"
+                        IsVisible="{OnPlatform {Binding HasAcrylicView, Source={x:Reference this}},
+                                               WinUI='False'}"
+                        ZIndex="1" />
+
+                    <Image
+                        Aspect="AspectFill"
+                        IsVisible="{OnPlatform 'False',
+                                               WinUI='True'}"
+                        Opacity="0.04"
+                        Source="sc_texture_small.png" />
+
+                    <ContentPresenter />
+
+                    <Grid
+                        BackgroundColor="LightBlue"
+                        IgnoreSafeArea="True"
+                        InputTransparent="False"
+                        IsVisible="{Binding IsPageBusy, Source={x:Reference this}}">
+
+                        <VerticalStackLayout
+                            HorizontalOptions="Center"
+                            Spacing="40"
+                            VerticalOptions="Center">
+                            <Image HeightRequest="120" Source="{AppThemeBinding Light='sc_emblem_blue.png', Dark='sc_emblem_white.png'}" />
+                            <ActivityIndicator
+                                HorizontalOptions="Center"
+                                IsRunning="{Binding IsPageBusy, Source={x:Reference this}}"
+                                VerticalOptions="Center"
+                                ZIndex="1"
+                                Color="Black" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+</ContentPage>

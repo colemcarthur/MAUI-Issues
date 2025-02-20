@@ -1,6 +1,8 @@
+using ApplicationQuitError.Controls;
+
 namespace ApplicationQuitError;
 
-public partial class Modal : ContentPage
+public partial class Modal : BasePopUpPage
 {
 	public Modal()
 	{
@@ -9,6 +11,11 @@ public partial class Modal : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-		await Navigation.PopModalAsync(); 
+        await PopModalAsync();
+    }
+
+    private void BasePopUpPage_Unfocused(object sender, FocusEventArgs e)
+    {
+
     }
 }

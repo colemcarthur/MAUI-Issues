@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ApplicationQuitError.Controls.BasePopUpPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ApplicationQuitError.Controls"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Name="this"
+    Title="BasePopUpPage"
+    ios:Page.ModalPresentationStyle="OverFullScreen"
+    ios:Page.UseSafeArea="False"
+    x:DataType="controls:BasePopUpPage"
+    Shell.NavBarIsVisible="False">
+
+    <ContentPage.ControlTemplate>
+        <ControlTemplate>
+
+            <toolkit:SemanticOrderView x:Name="tabOrderControl">
+
+                <Border
+                    x:Name="popupContainer"
+                    Padding="{StaticResource DefaultPageThickness}"
+                    BackgroundColor="LimeGreen"
+                    HeightRequest="{Binding PopupHeight, Source={x:Reference this}}"
+                    StrokeShape="RoundRectangle 12"
+                    StrokeThickness="0"
+                    WidthRequest="{Binding PopupWidth, Source={x:Reference this}}">
+
+                    <Grid IgnoreSafeArea="True">
+                        <ContentPresenter />
+                    </Grid>
+                </Border>
+
+            </toolkit:SemanticOrderView>
+
+        </ControlTemplate>
+    </ContentPage.ControlTemplate>
+</ContentPage>

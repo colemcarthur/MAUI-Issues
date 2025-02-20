@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
 using Microsoft.Maui.LifecycleEvents;
+using SCQuote.AppWindows;
 
 namespace ApplicationQuitError;
 
@@ -10,6 +12,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -42,7 +45,7 @@ public static class MauiProgram
                             if (currentWindow != null)
                             {
                                 bool result = await currentWindow.Page.DisplayAlert(
-                                    "Close SCQuote",
+                                    "Close App",
                                     "Are you sure you want to close this application?",
                                     "Yes",
                                     "Cancel");
@@ -63,6 +66,9 @@ public static class MauiProgram
               builder.Logging.AddDebug();
 #endif
 
+        builder.Services.AddSingleton<MainWindow>();
+        builder.Services.AddSingleton<AppShell>();
+        builder.Services.AddSingleton<MainPage>();
         builder.Services.AddTransient<Modal>();
 
         return builder.Build();

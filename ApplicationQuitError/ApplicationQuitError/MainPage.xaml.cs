@@ -1,6 +1,8 @@
-﻿namespace ApplicationQuitError;
+﻿using ApplicationQuitError.Controls;
 
-public partial class MainPage : ContentPage
+namespace ApplicationQuitError;
+
+public partial class MainPage : BaseContentPage
 {
     public MainPage()
     {
